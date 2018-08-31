@@ -127,6 +127,24 @@ async def on_message(message):
         return
 
 
+    class RPS(Enum):
+    rock     = "\N{MOYAI}"
+    paper    = "\N{PAGE FACING UP}"
+    scissors = "\N{BLACK SCISSORS}"
+
+
+class RPSParser:
+    def __init__(self, argument):
+        argument = argument.lower()
+        if argument == "rock":
+            self.choice = RPS.rock
+        elif argument == "paper":
+            self.choice = RPS.paper
+        elif argument == "scissors":
+            self.choice = RPS.scissors
+        else:
+            raise
+    
     if msg.startswith(";help"): 
         embed = discord.Embed(title="Help", description="[Required] (Optional)", color=0x00ff00)
         embed.set_thumbnail(url=bot.user.avatar_url)
