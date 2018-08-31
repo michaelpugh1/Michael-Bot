@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix=';')
 count = 1
 cchannel = ""
 pcounter = ""
-game = "LimeBot"
+game = ";help"
 
 global cooldown
 cooldown_8ball = []
