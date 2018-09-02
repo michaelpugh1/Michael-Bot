@@ -71,10 +71,11 @@ async def on_message(message):
         return
 
     if message.content.startswith(";dm "):
-        tm = message.content.split(" ")
-        tid = tm[1]
-        await bot.send_message(get(message.server.members, id=tid), message.content[len(tm[0]) + len(tm[1]) + 2:])    
-        await bot.send_message(message.channel, "Sent the message")
+        if message.author.server_permissions.kick_members:
+            tm = message.content.split(" ")
+            tid = tm[1]
+            await bot.send_message(get(message.server.members, id=tid), message.content[len(tm[0]) + len(tm[1]) + 2:])    
+            await bot.send_message(message.channel, "Sent the message")
 
     msg = message.content.lower()
 
