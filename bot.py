@@ -44,6 +44,12 @@ async def on_ready():
     print('------')
     await bot.change_presence(game=discord.Game(name=game))
     
+    @client.event
+async def on_message(message):
+    if message.content.startswith('!ping'):
+        await client.send_message(message.channel, 'pong')
+
+    
 @bot.event
 async def on_message(message): 
 
@@ -151,7 +157,7 @@ async def on_message(message):
         embed.add_field(name=";cooldown [Number]", value="Edits the cooldown for certain commands.", inline=False)
         embed.add_field(name=";game [Name]", value="Changed the name of the game LimeBot is playing.\n", inline=False)
         embed.add_field(name=";setstreamtime [Time]", value="Changes the streamtime, turns it off if set to false.")
-        embed.add_field(name=";ping [;ping]", value="CDisplays the bots ping from the server to you.")
+        embed.add_field(name=";ping [;ping]", value="Displays the bots ping from the server to you.")
         
 
         embed.add_field(name="**__FUN COMMANDS:__**:", value="Fun commands for all to use.", inline=False)
