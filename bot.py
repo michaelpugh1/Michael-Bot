@@ -44,6 +44,11 @@ async def on_ready():
     print('------')
     await bot.change_presence(game=discord.Game(name=game))
 
+    @client.event
+async def on_message(message):
+    if message.content.startswith(';ping'):
+        await client.send_message(message.channel, 'pong')
+    
 @bot.event
 async def on_message(message): 
 
