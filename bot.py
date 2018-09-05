@@ -150,7 +150,7 @@ async def on_message(message):
         embed.add_field(name=";setcounting", value="Makes the current channel a channel for counting.", inline=False)
         embed.add_field(name=";editnum [Number]", value="Edits the current number to count.", inline=False)
         embed.add_field(name=";cooldown [Number]", value="Edits the cooldown for certain commands.", inline=False)
-        embed.add_field(name=";game [Name]", value="Changed the name of the game LimeBot is playing.\n", inline=False)
+        embed.add_field(name=";game [Name]", value="Changed the name of the game Michael Bot is playing.\n", inline=False)
         embed.add_field(name=";setstreamtime [Time]", value="Changes the streamtime, turns it off if set to false.")
         embed.add_field(name=";ping [;ping]", value="Displays the bots ping from the server to you.")
         
@@ -218,7 +218,9 @@ async def on_message(message):
             cooldown_8ball.append(message.author.id)
             await asyncio.sleep(cooldown)
             cooldown_8ball.remove(message.author.id)
-
+    
+    if msg.startswith(";ping")   
+      await client.send_message(msg.channel,   'Pong!')
 
     if msg.startswith(";flip") or msg.startswith(";coinflip"):
 
