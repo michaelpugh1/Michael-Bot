@@ -151,7 +151,8 @@ async def on_message(message):
         embed.add_field(name=";cooldown [Number]", value="Edits the cooldown for certain commands.", inline=False)
         embed.add_field(name=";game [Name]", value="Changed the name of the game LimeBot is playing.\n", inline=False)
         embed.add_field(name=";setstreamtime [Time]", value="Changes the streamtime, turns it off if set to false.")
-
+        embed.add_field(name=";ping [;ping]", value="CDisplays the bots ping from the server to you.")
+        
 
         embed.add_field(name="**__FUN COMMANDS:__**:", value="Fun commands for all to use.", inline=False)
         embed.add_field(name=";8ball [Question]", value="Gives an (unreliable) answer to a question.", inline=False)
