@@ -219,8 +219,6 @@ async def on_message(message):
             await asyncio.sleep(cooldown)
             cooldown_8ball.remove(message.author.id)
     
-    if msg.startswith("ping")   
-      await client.send_message(msg.channel,   'Pong!')
 
     if msg.startswith(";flip") or msg.startswith(";coinflip"):
 
